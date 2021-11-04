@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
 	maven {
             url 'https://maven.google.com/'
         }
@@ -12,31 +12,37 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
 
 rootProject.allprojects {
     repositories {
     	google()
- 	   jcenter()
+ 	    jcenter()
         maven {
             url "https://maven.google.com"
         }
         maven {
             url "https://jitpack.io"
         }
+
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+
+    compileSdkVersion 31
 
     defaultConfig {
+
+        minSdkVersion 16
+        targetSdkVersion 31
+
         testInstrumentationRunner "androidx.support.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
         disable 'InvalidPackage'

@@ -15,16 +15,19 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 31
+    buildToolsVersion '30.0.3'
 
     lintOptions {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 31
+
         applicationId "com.matheusvillela.flutter.plugins.qrcodereaderexample"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -41,7 +44,7 @@ flutter {
 }
 
 dependencies {
-    androidTestCompile 'com.android.support:support-annotations:25.0.0'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test:rules:0.5'
+//    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }

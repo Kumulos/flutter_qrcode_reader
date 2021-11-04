@@ -3,8 +3,6 @@
     android:versionCode="1"
     android:versionName="0.0.1">
 
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="21" />
-
     <!-- The INTERNET permission is required for development. Specifically, flutter needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->
@@ -19,8 +17,9 @@
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
-    <application android:name="io.flutter.app.FlutterApplication" android:label="QR Code Reader Example" android:icon="@mipmap/ic_launcher">
+    <application android:allowBackup="false" android:name="io.flutter.app.FlutterApplication" android:label="QR Code Reader Example" android:icon="@mipmap/ic_launcher">
         <activity android:name=".MainActivity"
+                  android:exported="true"
                   android:launchMode="singleTop"
                   android:theme="@android:style/Theme.Black.NoTitleBar"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
@@ -31,5 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <meta-data android:name="flutterEmbedding" android:value="2"/>
     </application>
 </manifest>
